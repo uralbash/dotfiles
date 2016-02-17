@@ -1,0 +1,9 @@
+development_uralbash.ini
+*.ropeproject
+.coverage
+*.egg-info
+*.pyc
+npm-debug.log
+*.eggs
+.tags
+.vagrant
