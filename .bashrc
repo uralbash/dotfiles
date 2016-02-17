@@ -228,6 +228,10 @@ alias nix='nix-env'
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # }}}
 
+# {{{ Utils
+alias weather="curl -4 http://wttr.in/Yekaterinburg"
+# }}}
+
 # {{{ Local setttings
 source ~/.bash-locals
 # }}}
