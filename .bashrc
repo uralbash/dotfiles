@@ -221,7 +221,7 @@ gvm use go1.5 > /dev/null
 # }}}
 
 # {{{ Nix
-alias nix='nix-env'
+export NIX_BUILD_CORES=4
 # }}}
 
 # {{{ Eiffel
