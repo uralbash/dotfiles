@@ -25,10 +25,10 @@ if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-~/.bash-org-ru/generate.sh > /dev/null
-
 if [ -e /home/uralbash/.nix-profile/etc/profile.d/nix.sh ]; then
     . /home/uralbash/.nix-profile/etc/profile.d/nix.sh;
 fi # added by Nix installer
+
+~/.bash-org-ru/generate.sh > /dev/null
 
 NIXPKGS_CONFIG=$HOME/.nixpkgs/config.nix
