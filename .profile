@@ -25,10 +25,16 @@ if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# Disable CapsLock
+xmodmap -e "keycode 66 = Shift_L NoSymbol Shift_L"
+# Remap Insert to Delete
+xmodmap -e "keysym Insert = Delete"
+
+# Nix
 if [ -e /home/uralbash/.nix-profile/etc/profile.d/nix.sh ]; then
     . /home/uralbash/.nix-profile/etc/profile.d/nix.sh;
 fi # added by Nix installer
-
-~/.bash-org-ru/generate.sh > /dev/null
-
 NIXPKGS_CONFIG=$HOME/.nixpkgs/config.nix
+
+# Fortune
+~/.bash-org-ru/generate.sh > /dev/null
