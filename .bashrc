@@ -122,6 +122,9 @@ fi
 #                                                            #
 ##############################################################
 
+# English in console
+export LC_ALL=C
+
 # {{{ Env
 export NO_METRIKA=true
 export VAGRANT_NO_PARALLEL=yes
@@ -199,6 +202,8 @@ source ~/.bash-powerline.sh
 
 # {{{ Vim
 export EDITOR=vim
+export PATH=$PATH:/home/uralbash/Projects/bin/vim/usr/local/bin/
+export VIMRUNTIME=/home/uralbash/Projects/bin/vim/usr/local/share/vim/vim74/
 #alias vi=nvim
 #alias vim=nvim
 # }}}

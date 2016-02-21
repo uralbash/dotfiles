@@ -11,7 +11,11 @@ all: vim completion links
 links:
 	@./link_build.sh
 
-vim: vim-spell
+vim: vim-build vim-spell
+
+vim-build:
+	cd submodules && \
+    make vim
 
 vim-spell:
 	@wget -r ftp://ftp.vim.org/pub/vim/runtime/spell/ -P .vim/
@@ -20,10 +24,10 @@ vim-spell:
 version-managers:
 	# Docker
 	curl -sL https://download.getcarina.com/dvm/latest/install.sh | sh
-	# Go lang
-	bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 	# NodeJs
-	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+	curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+	# Go lang
+	curl -sL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | sh
 
 bash-completion:
 	# Vagrant
