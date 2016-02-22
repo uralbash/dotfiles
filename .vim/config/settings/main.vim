@@ -29,6 +29,7 @@ set smarttab " Be smart when using tabs
 set autoindent " Enable auto indent
 set smartindent " Smart indent
 set wrap " Enable word wrap
+set backspace=indent,eol,start " backspace to everywhere
 set noerrorbells visualbell t_vb= " No annoying sound on errors
 set encoding=utf8 " Default encoding
 set termencoding=utf-8 " Terminal encoding

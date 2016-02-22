@@ -14,6 +14,7 @@ links:
 vim: vim-build vim-spell
 
 vim-build:
+	nix-env -i ninja mono && \
 	cd submodules && \
     make vim
 
