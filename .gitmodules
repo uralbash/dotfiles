@@ -1,3 +1,24 @@
 [submodule "submodules/vim"]
 	path = submodules/vim
 	url = https://github.com/vim/vim.git
+[submodule "submodules/python/flake8"]
+	path = submodules/python/flake8
+	url = https://gitlab.com/pycqa/flake8.git
+[submodule "submodules/python/pep8"]
+	path = submodules/python/pep8
+	url = https://github.com/PyCQA/pep8.git
+[submodule "submodules/python/mccabe"]
+	path = submodules/python/mccabe
+	url = https://github.com/PyCQA/mccabe.git
+[submodule ".vim/submodules/markdown2ctags"]
+	path = .vim/submodules/markdown2ctags
+	url = https://github.com/jszakmeister/markdown2ctags.git
+[submodule ".vim/submodules/rst2ctags"]
+	path = .vim/submodules/rst2ctags
+	url = https://github.com/jszakmeister/rst2ctags.git
+[submodule "submodules/python/pep8-naming"]
+	path = submodules/python/pep8-naming
+	url = https://github.com/PyCQA/pep8-naming.git
+[submodule "submodules/python/pydocstyle"]
+	path = submodules/python/pydocstyle
+	url = https://github.com/PyCQA/pydocstyle.git

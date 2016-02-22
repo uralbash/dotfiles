@@ -4,7 +4,7 @@ au BufNewFile,BufRead *.js_t set filetype=javascript
 
 let g:tagbar_type_rst = {
     \ 'ctagstype': 'rst',
-    \ 'ctagsbin' : '/home/uralbash/.vim/config/common/rst2ctags/rst2ctags.py',
+    \ 'ctagsbin' : '/home/uralbash/.vim/submodules/rst2ctags/rst2ctags.py',
     \ 'ctagsargs' : '-f - --sort=yes',
     \ 'kinds' : [
         \ 's:sections',

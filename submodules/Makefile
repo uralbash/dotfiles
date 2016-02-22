@@ -6,6 +6,13 @@
 all:
 	@echo "Makefile needs your attention"
 
+python:
+	pip install -U -e python/pep8/ --user
+	pip install -U -e python/flake8/ --user
+	pip install -U -e python/mccabe/ --user
+	pip install -U -e python/pydocstyle/ --user
+	pip install -U -e python/pep8-naming/ --user
+
 vim:
 	cd vim && \
 	git reset --hard && \
@@ -31,7 +38,7 @@ vim:
     make clean distclean
 
 
-.PHONY: vim
+.PHONY: vim, python
 
 # vim:ft=make
 #

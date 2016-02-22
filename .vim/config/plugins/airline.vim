@@ -1,6 +1,6 @@
-let g:airline_powerline_fonts = 1 " Use airline fonts
-" If you want to auto-completion to work stable in older vim, disable this option
-let g:airline#extensions#tabline#enabled = 1
+" Use airline fonts
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 0
 " Airline tabline settings
 let g:airline#extensions#tabline#fnamemod = ':t'
 " let g:airline#extensions#tabline#buffer_nr_show = 0

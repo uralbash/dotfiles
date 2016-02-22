@@ -11,7 +11,13 @@ all: vim completion links
 links:
 	@./link_build.sh
 
-vim: vim-build vim-spell
+python:
+	cd submodules && make python
+
+vim: vim-build vim-spell vim-submodules
+
+vim-submodules:
+	cd .vim && make
 
 vim-build:
 	nix-env -i ninja mono && \
