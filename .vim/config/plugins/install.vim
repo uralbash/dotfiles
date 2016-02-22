@@ -68,8 +68,9 @@ call Load('../language/git.vim')
 
 " {{{ Autocomplete
 Plug 'ervandew/supertab'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer  --gocode-completer --system-libclang --system-boost' }
-call Load("youcompleteme.vim")
+Plug 'Shougo/neocomplete.vim'
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer  --gocode-completer --system-libclang --system-boost' }
+" call Load("youcompleteme.vim")
 " }}}
 
 " {{{ Nix package manager

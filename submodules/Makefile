@@ -8,6 +8,7 @@ all:
 
 vim:
 	cd vim && \
+	git reset --hard && \
     git pull && \
     make clean distclean && \
 	./configure --with-features=huge \
@@ -19,6 +20,7 @@ vim:
 		--enable-luainterp \
 		--enable-gui=auto \
 		--with-features=huge \
+		--enable-fail-if-missing \
 		--with-x \
 		--with-python3-config-dir=/usr/lib/python3.5/config-3.5dm-x86_64-linux-gnu \
 		--with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
