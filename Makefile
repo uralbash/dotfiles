@@ -11,6 +11,10 @@ all: vim completion links
 links:
 	@./link_build.sh
 
+submodules:
+	git submodule update --init --recursive
+	git submodule foreach git pull origin master
+
 python:
 	cd submodules && make python
 
@@ -20,7 +24,7 @@ vim-submodules:
 	cd .vim && make
 
 vim-build:
-	nix-env -i ninja mono && \
+	nix-env -i ninja mono perl lua-5.2.3 && \
 	cd submodules && \
     make vim
 
@@ -49,6 +53,8 @@ bash-completion:
 	curl -L https://svn.apache.org/repos/asf/subversion/trunk/tools/client-side/bash_completion > .completion-svn.sh
 	# Mercurial
 	curl -L curl https://selenic.com/hg/raw-file/tip/contrib/bash_completion > .completion-hg.sh
+
+.PHONY: submodules
 
 # vim:ft=make
 #

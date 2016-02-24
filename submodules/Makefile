@@ -3,6 +3,8 @@
 # uralbash, 2016-02-22 00:58
 #
 
+export LUA_PREFIX=/nix/store/z928rmqy47f21r1pk0rq0ipzlc06mzla-lua-5.2.3
+
 all:
 	@echo "Makefile needs your attention"
 
@@ -16,7 +18,7 @@ python:
 vim:
 	cd vim && \
 	git reset --hard && \
-    git pull && \
+    git pull origin master && \
     make clean distclean && \
 	./configure --with-features=huge \
 		--enable-multibyte \
@@ -28,17 +30,18 @@ vim:
 		--enable-gui=auto \
 		--with-features=huge \
 		--enable-fail-if-missing \
+		--enable-largefile \
 		--with-x \
-		--with-python3-config-dir=/usr/lib/python3.5/config-3.5dm-x86_64-linux-gnu \
-		--with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
-		--enable-gui=gtk2 --enable-cscope && \
+		--enable-gui=auto \
+		--enable-cscope \
+		LDFLAGS="-Wl,-rpath,/nix/store/z928rmqy47f21r1pk0rq0ipzlc06mzla-lua-5.2.3/lib" && \
     make -j4 && \
 	mkdir -p ~/Projects/bin/vim/ && \
 	make install DESTDIR=~/Projects/bin/vim/ && \
     make clean distclean
 
 
-.PHONY: vim, python
+.PHONY: vim python
 
 # vim:ft=make
 #

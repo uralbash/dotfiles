@@ -26,7 +26,7 @@ Plug 'ap/vim-css-color', {'for': ['jinja', 'jinja2', 'html', 'html5', 'djangohtm
 call Load('../language/css.vim')
 " }}}
 
-" {{{ JavaScrip & JSON
+" {{{ JavaScrip & JSON & YAML
 Plug 'elzr/vim-json', {'for': 'json'}
 " {{{ Syntax
 Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
@@ -40,6 +40,7 @@ call Load('javascript-libraries-syntax.vim')
 " }}}
 Plug 'marijnh/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
 call Load("../language/js.vim")
+call Load("../language/yaml.vim")
 " }}}
 
 " {{{ Colors
