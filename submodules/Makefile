@@ -38,8 +38,9 @@ vim:
     make -j4 && \
 	mkdir -p ~/Projects/bin/vim/ && \
 	make install DESTDIR=~/Projects/bin/vim/ && \
-    make clean distclean
-
+    make clean distclean && \
+	git reset --hard && \
+	git clean -f
 
 .PHONY: vim python
 
