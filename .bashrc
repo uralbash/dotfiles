@@ -123,7 +123,7 @@ fi
 ##############################################################
 
 # English in console
-export LC_ALL=C
+export LC_ALL=
 
 # {{{ Env
 export NO_METRIKA=true
