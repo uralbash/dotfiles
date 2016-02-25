@@ -156,6 +156,10 @@ source ~/.completion/vagrant.sh
 source ~/.completion/tmux.sh
 # }}}
 
+# {{{ Libvirt
+source ~/.completion/virsh.sh
+# }}}
+
 # {{{ Docker
 source ~/.completion/docker.sh
 source ~/.dvm/dvm.sh
