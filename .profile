@@ -28,7 +28,7 @@ fi
 # Disable CapsLock
 xmodmap -e "keycode 66 = Shift_L NoSymbol Shift_L"
 # Remap Insert to Delete
-xmodmap -e "keysym Insert = Delete"
+# xmodmap -e "keysym Insert = Delete"
 
 # Nix
 if [ -e /home/uralbash/.nix-profile/etc/profile.d/nix.sh ]; then
