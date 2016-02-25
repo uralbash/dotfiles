@@ -7,17 +7,17 @@
 #
 
 
-excludes=".git foo"
+excludes=".git .gitmodules"
 
 
 for file in .[^.]*; do
     src_path=`pwd`/$file
     dst_path=$HOME/$file
+    if [[ " ${excludes[*]} " == *" $file "* ]]; then
+        echo "Exclude $file !!!"
+        continue
+    fi
     if [[ -d $src_path ]]; then
-        if [[ " ${excludes[*]} " == *" $file "* ]]; then
-            echo "exclude $file dir!"
-            continue
-        fi
         echo "$file"
         rm -f $dst_path
         ln -sf $src_path/ $dst_path
