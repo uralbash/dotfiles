@@ -108,6 +108,7 @@ call Load('../language/dart.vim')
 " }}}
 
 " {{{ Nginx, Docker, Vagrant etc...
+Plug 'keith/tmux.vim', {'for': 'tmux'}
 Plug 'evanmiller/nginx-vim-syntax', {'for': 'nginx'}
 Plug 'ekalinin/Dockerfile.vim', {'for': 'dockerfile'}
 

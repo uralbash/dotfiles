@@ -35,7 +35,7 @@ vim:
 		--enable-gui=auto \
 		--enable-cscope \
 		LDFLAGS="-Wl,-rpath,${LUA_PREFIX}/lib" && \
-    make -j4 && \
+    make -j5 && \
 	mkdir -p ~/Projects/bin/vim/ && \
 	make install DESTDIR=~/Projects/bin/vim/ && \
     make clean distclean && \

@@ -395,6 +395,7 @@ __docker_complete_isolation() {
 __docker_complete_log_drivers() {
 	COMPREPLY=( $( compgen -W "
 		awslogs
+		etwlogs
 		fluentd
 		gelf
 		journald
@@ -513,6 +514,22 @@ __docker_complete_log_driver_options() {
 
 __docker_complete_log_levels() {
 	COMPREPLY=( $( compgen -W "debug info warn error fatal" -- "$cur" ) )
+}
+
+__docker_complete_restart() {
+	case "$prev" in
+		--restart)
+			case "$cur" in
+				on-failure:*)
+					;;
+				*)
+					COMPREPLY=( $( compgen -W "always no on-failure on-failure: unless-stopped" -- "$cur") )
+					;;
+			esac
+			return
+			;;
+	esac
+	return 1
 }
 
 # a selection of the available signals that is most likely of interest in the
@@ -1275,7 +1292,7 @@ _docker_network_connect() {
 
 _docker_network_create() {
 	case "$prev" in
-		--aux-address|--gateway|--ip-range|--ipam-opt|--opt|-o|--subnet)
+		--aux-address|--gateway|--internal|--ip-range|--ipam-opt|--ipv6|--opt|-o|--subnet)
 			return
 			;;
 		--ipam-driver)
@@ -1294,7 +1311,7 @@ _docker_network_create() {
 
 	case "$cur" in
 		-*)
-			COMPREPLY=( $( compgen -W "--aux-address --driver -d --gateway --help --internal --ip-range --ipam-driver --ipam-opt --opt -o --subnet" -- "$cur" ) )
+			COMPREPLY=( $( compgen -W "--aux-address --driver -d --gateway --help --internal --ip-range --ipam-driver --ipam-opt --ipv6 --opt -o --subnet" -- "$cur" ) )
 			;;
 	esac
 }
@@ -1657,6 +1674,7 @@ _docker_run() {
 
 
 	__docker_complete_log_driver_options && return
+	__docker_complete_restart && return
 
 	case "$prev" in
 		--add-host)
@@ -1750,16 +1768,6 @@ _docker_run() {
 					if [ "${COMPREPLY[*]}" = "container:" ] ; then
 						__docker_nospace
 					fi
-					;;
-			esac
-			return
-			;;
-		--restart)
-			case "$cur" in
-				on-failure:*)
-					;;
-				*)
-					COMPREPLY=( $( compgen -W "always no on-failure on-failure: unless-stopped" -- "$cur") )
 					;;
 			esac
 			return
@@ -1938,6 +1946,7 @@ _docker_update() {
 		--memory -m
 		--memory-reservation
 		--memory-swap
+		--restart
 	"
 
 	local boolean_options="
@@ -1945,6 +1954,8 @@ _docker_update() {
 	"
 
 	local all_options="$options_with_args $boolean_options"
+
+	__docker_complete_restart && return
 
 	case "$prev" in
 		$(__docker_to_extglob "$options_with_args") )

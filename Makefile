@@ -42,17 +42,19 @@ version-managers:
 
 bash-completion:
 	# Vagrant
-	wget https://raw.github.com/kura/vagrant-bash-completion/master/etc/bash_completion.d/vagrant -O .completion-vagrant.sh
+	curl -L https://raw.github.com/kura/vagrant-bash-completion/master/etc/bash_completion.d/vagrant > .completion/vagrant.sh
 	# Docker
-	curl -L https://raw.githubusercontent.com/docker/docker/master/contrib/completion/bash/docker > .completion-docker.sh
+	curl -L https://raw.githubusercontent.com/docker/docker/master/contrib/completion/bash/docker > .completion/docker.sh
 	# Bazaar
-	curl -L http://bazaar.launchpad.net/~david-nussio/bazaar-completion/trunk/download/head:/bazaar.sh-20081127141834-oeqleqcidfhy9zz7-1/bazaar.sh > .completion-bazaar.sh
+	curl -L http://bazaar.launchpad.net/~david-nussio/bazaar-completion/trunk/download/head:/bazaar.sh-20081127141834-oeqleqcidfhy9zz7-1/bazaar.sh > .completion/bazaar.sh
 	# Git
-	curl -L https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > .completion-git.sh
+	curl -L https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > .completion/git.sh
 	# Subversion
-	curl -L https://svn.apache.org/repos/asf/subversion/trunk/tools/client-side/bash_completion > .completion-svn.sh
+	curl -L https://svn.apache.org/repos/asf/subversion/trunk/tools/client-side/bash_completion > .completion/svn.sh
 	# Mercurial
-	curl -L curl https://selenic.com/hg/raw-file/tip/contrib/bash_completion > .completion-hg.sh
+	curl -L https://selenic.com/hg/raw-file/tip/contrib/bash_completion > .completion/hg.sh
+	# Tmux
+	curl -L https://raw.githubusercontent.com/przepompownia/tmux-bash-completion/master/completions/tmux > .completion/tmux.sh
 
 .PHONY: submodules
 
