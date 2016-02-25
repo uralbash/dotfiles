@@ -3,7 +3,7 @@
 # uralbash, 2016-02-22 00:58
 #
 
-export LUA_PREFIX=/nix/store/z928rmqy47f21r1pk0rq0ipzlc06mzla-lua-5.2.3
+export LUA_PREFIX=/nix/store/avj9vw4p8ra5aglrb49g4jkzarscywwc-lua-5.3.0
 
 all:
 	@echo "Makefile needs your attention"
@@ -34,7 +34,7 @@ vim:
 		--with-x \
 		--enable-gui=auto \
 		--enable-cscope \
-		LDFLAGS="-Wl,-rpath,/nix/store/z928rmqy47f21r1pk0rq0ipzlc06mzla-lua-5.2.3/lib" && \
+		LDFLAGS="-Wl,-rpath,${LUA_PREFIX}/lib" && \
     make -j4 && \
 	mkdir -p ~/Projects/bin/vim/ && \
 	make install DESTDIR=~/Projects/bin/vim/ && \

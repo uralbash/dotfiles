@@ -24,7 +24,7 @@ vim-submodules:
 	cd .vim && make
 
 vim-build:
-	nix-env -i ninja mono perl lua-5.2.3 && \
+	nix-env -i ninja mono perl lua-5.3.0 && \
 	cd submodules && \
     make vim
 
