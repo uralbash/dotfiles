@@ -33,6 +33,7 @@ vim:
 		--enable-largefile \
 		--with-x \
 		--enable-gui=auto \
+		--enable-xterm_clipboard \
 		--enable-cscope \
 		LDFLAGS="-Wl,-rpath,${LUA_PREFIX}/lib" && \
     make -j5 && \
