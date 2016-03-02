@@ -397,6 +397,7 @@ __docker_complete_log_drivers() {
 		awslogs
 		etwlogs
 		fluentd
+		gcplogs
 		gelf
 		journald
 		json-file
@@ -410,13 +411,14 @@ __docker_complete_log_options() {
 	# see docs/reference/logging/index.md
 	local awslogs_options="awslogs-region awslogs-group awslogs-stream"
 	local fluentd_options="env fluentd-address labels tag"
+	local gcplogs_options="env gcp-log-cmd gcp-project labels"
 	local gelf_options="env gelf-address labels tag"
 	local journald_options="env labels tag"
 	local json_file_options="env labels max-file max-size"
 	local syslog_options="syslog-address syslog-tls-ca-cert syslog-tls-cert syslog-tls-key syslog-tls-skip-verify syslog-facility tag"
 	local splunk_options="env labels splunk-caname splunk-capath splunk-index splunk-insecureskipverify splunk-source splunk-sourcetype splunk-token splunk-url tag"
 
-	local all_options="$fluentd_options $gelf_options $journald_options $json_file_options $syslog_options $splunk_options"
+	local all_options="$fluentd_options $gcplogs_options $gelf_options $journald_options $json_file_options $syslog_options $splunk_options"
 
 	case $(__docker_value_of_option --log-driver) in
 		'')
@@ -427,6 +429,9 @@ __docker_complete_log_options() {
 			;;
 		fluentd)
 			COMPREPLY=( $( compgen -W "$fluentd_options" -S = -- "$cur" ) )
+			;;
+		gcplogs)
+			COMPREPLY=( $( compgen -W "$gcplogs_options" -S = -- "$cur" ) )
 			;;
 		gelf)
 			COMPREPLY=( $( compgen -W "$gelf_options" -S = -- "$cur" ) )
@@ -811,7 +816,7 @@ _docker_daemon() {
  			return
  			;;
  	esac
- 
+
  	local key=$(__docker_map_key_of_current_option '--storage-opt')
  	case "$key" in
  		dm.@(blkdiscard|override_udev_sync_check|use_deferred_@(removal|deletion)))
@@ -1205,14 +1210,14 @@ _docker_load() {
 
 _docker_login() {
 	case "$prev" in
-		--email|-e|--password|-p|--username|-u)
+		--password|-p|--username|-u)
 			return
 			;;
 	esac
 
 	case "$cur" in
 		-*)
-			COMPREPLY=( $( compgen -W "--email -e --help --password -p --username -u" -- "$cur" ) )
+			COMPREPLY=( $( compgen -W "--help --password -p --username -u" -- "$cur" ) )
 			;;
 	esac
 }
