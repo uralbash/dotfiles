@@ -169,10 +169,10 @@ alias dockviz="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock nate
 # }}}
 
 # {{{ Colors
-# if [ "$TERM" == "xterm" ]; then
+if [ "$TERM" == "xterm" ]; then
     # No it isn't, it's gnome-terminal
     export TERM=xterm-256color
-# fi
+fi
 # }}}
 
 # {{{ Python
