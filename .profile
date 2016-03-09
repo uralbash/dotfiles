@@ -37,4 +37,4 @@ fi # added by Nix installer
 NIXPKGS_CONFIG=$HOME/.nixpkgs/config.nix
 
 # Fortune
-~/.bash-org-ru/generate.sh > /dev/null
+# ~/.bash-org-ru/generate.sh > /dev/null
