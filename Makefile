@@ -18,6 +18,10 @@ submodules:
 python:
 	cd submodules && make python
 
+nix:
+	ln -s ${HOME}/.nix-profile/share/applications/ \
+		${HOME}/.local/share/applications/
+
 vim: vim-build vim-spell vim-submodules
 
 vim-submodules:
