@@ -4,9 +4,6 @@
 [submodule "submodules/python/flake8"]
 	path = submodules/python/flake8
 	url = https://gitlab.com/pycqa/flake8.git
-[submodule "submodules/python/pep8"]
-	path = submodules/python/pep8
-	url = https://github.com/PyCQA/pep8.git
 [submodule "submodules/python/mccabe"]
 	path = submodules/python/mccabe
 	url = https://github.com/PyCQA/mccabe.git
@@ -22,3 +19,6 @@
 [submodule "submodules/python/pydocstyle"]
 	path = submodules/python/pydocstyle
 	url = https://github.com/PyCQA/pydocstyle.git
+[submodule "submodules/python/pycodestyle"]
+	path = submodules/python/pycodestyle
+	url = https://github.com/PyCQA/pycodestyle.git
