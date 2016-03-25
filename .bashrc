@@ -157,7 +157,7 @@ source ~/.completion/tmux.sh
 # }}}
 
 # {{{ Libvirt
-source ~/.completion/virsh.sh
+# source ~/.completion/virsh.sh
 # }}}
 
 # {{{ Docker
