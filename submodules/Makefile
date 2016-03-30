@@ -3,7 +3,7 @@
 # uralbash, 2016-02-22 00:58
 #
 
-export LUA_PREFIX=/nix/store/avj9vw4p8ra5aglrb49g4jkzarscywwc-lua-5.3.0
+export LUA_PREFIX=/nix/store/644xj34l4qn36hy921r3lhgcar27nysz-lua-5.3.0
 
 all:
 	@echo "Makefile needs your attention"
