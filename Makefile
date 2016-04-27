@@ -6,7 +6,7 @@
 _:
 	@echo "hi" > /dev/null
 
-all: vim completion links
+all: vim bash-completion links
 
 links:
 	@./link_build.sh

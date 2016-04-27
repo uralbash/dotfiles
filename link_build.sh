@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 #
 # link_build.sh
 # Copyright (C) 2016 uralbash <root@uralbash.ru>

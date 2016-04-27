@@ -410,12 +410,12 @@ __docker_complete_log_drivers() {
 __docker_complete_log_options() {
 	# see docs/reference/logging/index.md
 	local awslogs_options="awslogs-region awslogs-group awslogs-stream"
-	local fluentd_options="env fluentd-address labels tag"
+	local fluentd_options="env fluentd-address fluentd-async-connect fluentd-buffer-limit fluentd-retry-wait fluentd-max-retries labels tag"
 	local gcplogs_options="env gcp-log-cmd gcp-project labels"
-	local gelf_options="env gelf-address labels tag"
+	local gelf_options="env gelf-address gelf-compression-level gelf-compression-type labels tag"
 	local journald_options="env labels tag"
 	local json_file_options="env labels max-file max-size"
-	local syslog_options="syslog-address syslog-tls-ca-cert syslog-tls-cert syslog-tls-key syslog-tls-skip-verify syslog-facility tag"
+	local syslog_options="syslog-address syslog-format syslog-tls-ca-cert syslog-tls-cert syslog-tls-key syslog-tls-skip-verify syslog-facility tag"
 	local splunk_options="env labels splunk-caname splunk-capath splunk-index splunk-insecureskipverify splunk-source splunk-sourcetype splunk-token splunk-url tag"
 
 	local all_options="$fluentd_options $gcplogs_options $gelf_options $journald_options $json_file_options $syslog_options $splunk_options"
@@ -459,9 +459,21 @@ __docker_complete_log_options() {
 __docker_complete_log_driver_options() {
 	local key=$(__docker_map_key_of_current_option '--log-opt')
 	case "$key" in
+		fluentd-async-connect)
+			COMPREPLY=( $( compgen -W "false true" -- "${cur##*=}" ) )
+			return
+			;;
 		gelf-address)
 			COMPREPLY=( $( compgen -W "udp" -S "://" -- "${cur##*=}" ) )
 			__docker_nospace
+			return
+			;;
+		gelf-compression-level)
+			COMPREPLY=( $( compgen -W "1 2 3 4 5 6 7 8 9" -- "${cur##*=}" ) )
+			return
+			;;
+		gelf-compression-type)
+			COMPREPLY=( $( compgen -W "gzip none zlib" -- "${cur##*=}" ) )
 			return
 			;;
 		syslog-address)
@@ -493,6 +505,10 @@ __docker_complete_log_driver_options() {
 				user
 				uucp
 			" -- "${cur##*=}" ) )
+			return
+			;;
+		syslog-format)
+			COMPREPLY=( $( compgen -W "rfc3164 rfc5424 rfc5424micro" -- "${cur##*=}" ) )
 			return
 			;;
 		syslog-tls-@(ca-cert|cert|key))
@@ -603,7 +619,7 @@ _docker_attach() {
 
  	case "$cur" in
 		-*)
-			COMPREPLY=( $( compgen -W "--detach-keys --help --no-stdin --sig-proxy" -- "$cur" ) )
+			COMPREPLY=( $( compgen -W "--detach-keys --help --no-stdin --sig-proxy=false" -- "$cur" ) )
 			;;
 		*)
 			local counter=$(__docker_pos_first_nonflag '--detach-keys')
@@ -625,6 +641,7 @@ _docker_build() {
 		--cpu-quota
 		--file -f
 		--isolation
+		--label
 		--memory -m
 		--memory-swap
 		--shm-size
@@ -689,7 +706,7 @@ _docker_commit() {
 
 	case "$cur" in
 		-*)
-			COMPREPLY=( $( compgen -W "--author -a --change -c --help --message -m --pause -p" -- "$cur" ) )
+			COMPREPLY=( $( compgen -W "--author -a --change -c --help --message -m --pause=false -p=false" -- "$cur" ) )
 			;;
 		*)
 			local counter=$(__docker_pos_first_nonflag '--author|-a|--change|-c|--message|-m')
@@ -781,6 +798,7 @@ _docker_daemon() {
 		--cluster-advertise
 		--cluster-store
 		--cluster-store-opt
+		--containerd
 		--default-gateway
 		--default-gateway-v6
 		--default-ulimit
@@ -857,7 +875,7 @@ _docker_daemon() {
 			__docker_complete_log_drivers
 			return
 			;;
-		--pidfile|-p|--tlscacert|--tlscert|--tlskey)
+		--containerd|--pidfile|-p|--tlscacert|--tlscert|--tlskey)
 			_filedir
 			return
 			;;
@@ -873,6 +891,7 @@ _docker_daemon() {
 				dm.fs
 				dm.loopdatasize
 				dm.loopmetadatasize
+				dm.min_free_space
 				dm.mkfsarg
 				dm.mountopt
 				dm.override_udev_sync_check
@@ -1063,7 +1082,7 @@ _docker_help() {
 _docker_history() {
 	case "$cur" in
 		-*)
-			COMPREPLY=( $( compgen -W "--help --no-trunc --quiet -q" -- "$cur" ) )
+			COMPREPLY=( $( compgen -W "--help --human=false -H=false --no-trunc --quiet -q" -- "$cur" ) )
 			;;
 		*)
 			local counter=$(__docker_pos_first_nonflag)
@@ -1203,7 +1222,7 @@ _docker_load() {
 
 	case "$cur" in
 		-*)
-			COMPREPLY=( $( compgen -W "--help --input -i" -- "$cur" ) )
+			COMPREPLY=( $( compgen -W "--help --input -i --quiet -q" -- "$cur" ) )
 			;;
 	esac
 }
@@ -1312,11 +1331,14 @@ _docker_network_create() {
 			COMPREPLY=( $(compgen -W "$plugins" -- "$cur") )
 			return
 			;;
+		--label)
+			return
+			;;
 	esac
 
 	case "$cur" in
 		-*)
-			COMPREPLY=( $( compgen -W "--aux-address --driver -d --gateway --help --internal --ip-range --ipam-driver --ipam-opt --ipv6 --opt -o --subnet" -- "$cur" ) )
+			COMPREPLY=( $( compgen -W "--aux-address --driver -d --gateway --help --internal --ip-range --ipam-driver --ipam-opt --ipv6 --label --opt -o --subnet" -- "$cur" ) )
 			;;
 	esac
 }
@@ -1468,6 +1490,11 @@ _docker_ps() {
 			COMPREPLY=( $( compgen -W "created dead exited paused restarting running" -- "${cur##*=}" ) )
 			return
 			;;
+		volume)
+			cur="${cur##*=}"
+			__docker_complete_volumes
+			return
+			;;
 	esac
 
 	case "$prev" in
@@ -1475,7 +1502,7 @@ _docker_ps() {
 			__docker_complete_containers_all
 			;;
 		--filter|-f)
-			COMPREPLY=( $( compgen -S = -W "ancestor exited id label name status" -- "$cur" ) )
+			COMPREPLY=( $( compgen -S = -W "ancestor exited id label name status volume" -- "$cur" ) )
 			__docker_nospace
 			return
 			;;
@@ -1637,14 +1664,17 @@ _docker_run() {
 		--net-alias
 		--oom-score-adj
 		--pid
+		--pids-limit
 		--publish -p
 		--restart
 		--security-opt
 		--shm-size
 		--stop-signal
 		--tmpfs
+		--sysctl
 		--ulimit
 		--user -u
+		--userns
 		--uts
 		--volume-driver
 		--volumes-from
@@ -1680,6 +1710,24 @@ _docker_run() {
 
 	__docker_complete_log_driver_options && return
 	__docker_complete_restart && return
+
+	local key=$(__docker_map_key_of_current_option '--security-opt')
+	case "$key" in
+		label)
+			[[ $cur == *: ]] && return
+			COMPREPLY=( $( compgen -W "user: role: type: level: disable" -- "${cur##*=}") )
+			if [ "${COMPREPLY[*]}" != "disable" ] ; then
+				__docker_nospace
+			fi
+			return
+			;;
+		seccomp)
+			local cur=${cur##*=}
+			_filedir
+			COMPREPLY+=( $( compgen -W "unconfined" -- "$cur" ) )
+			return
+			;;
+	esac
 
 	case "$prev" in
 		--add-host)
@@ -1778,30 +1826,18 @@ _docker_run() {
 			return
 			;;
 		--security-opt)
-			case "$cur" in
-				label:*:*)
-					;;
-				label:*)
-					local cur=${cur##*:}
-					COMPREPLY=( $( compgen -W "user: role: type: level: disable" -- "$cur") )
-					if [ "${COMPREPLY[*]}" != "disable" ] ; then
-						__docker_nospace
-					fi
-					;;
-				seccomp:*)
-					local cur=${cur##*:}
-					_filedir
-					COMPREPLY+=( $( compgen -W "unconfined" -- "$cur" ) )
-					;;
-				*)
-					COMPREPLY=( $( compgen -W "label apparmor seccomp" -S ":" -- "$cur") )
-					__docker_nospace
-					;;
-			esac
+			COMPREPLY=( $( compgen -W "apparmor= label= no-new-privileges seccomp=" -- "$cur") )
+			if [ "${COMPREPLY[*]}" != "no-new-privileges" ] ; then
+				__docker_nospace
+			fi
 			return
 			;;
 		--user|-u)
 			__docker_complete_user_group
+			return
+			;;
+		--userns)
+			COMPREPLY=( $( compgen -W "host" -- "$cur" ) )
 			return
 			;;
 		--volume-driver)
@@ -2006,14 +2042,14 @@ _docker_volume_create() {
 			__docker_complete_plugins Volume
 			return
 			;;
-		--name|--opt|-o)
+		--label|--name|--opt|-o)
 			return
 			;;
 	esac
 
 	case "$cur" in
 		-*)
-			COMPREPLY=( $( compgen -W "--driver -d --help --name --opt -o" -- "$cur" ) )
+			COMPREPLY=( $( compgen -W "--driver -d --help --label --name --opt -o" -- "$cur" ) )
 			;;
 	esac
 }
@@ -2042,11 +2078,21 @@ _docker_volume_ls() {
 			COMPREPLY=( $( compgen -W "true false" -- "${cur##*=}" ) )
 			return
 			;;
+		driver)
+			cur=${cur##*=}
+			__docker_complete_plugins Volume
+			return
+			;;
+		name)
+			cur=${cur##*=}
+			__docker_complete_volumes
+			return
+			;;
 	esac
 
 	case "$prev" in
 		--filter|-f)
-			COMPREPLY=( $( compgen -S = -W "dangling" -- "$cur" ) )
+			COMPREPLY=( $( compgen -S = -W "dangling driver name" -- "$cur" ) )
 			__docker_nospace
 			return
 			;;

@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 #
 # generate.sh
 # Copyright (C) 2016 uralbash <root@uralbash.ru>

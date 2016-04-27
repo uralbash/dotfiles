@@ -3,17 +3,18 @@
 # uralbash, 2016-02-22 00:58
 #
 
-export LUA_PREFIX=/nix/store/644xj34l4qn36hy921r3lhgcar27nysz-lua-5.3.0
+# export LUA_PREFIX=/nix/store/644xj34l4qn36hy921r3lhgcar27nysz-lua-5.3.0
+export LUA_PREFIX=/nix/store/anv44l0fiv4157x7p9yv50w9nm3ll54q-lua-5.3.0
 
 all:
 	@echo "Makefile needs your attention"
 
 python:
-	pip install -U -e python/pep8/ --user
-	pip install -U -e python/flake8/ --user
-	pip install -U -e python/mccabe/ --user
-	pip install -U -e python/pydocstyle/ --user
-	pip install -U -e python/pep8-naming/ --user
+	pip3 install -U -e python/pep8-naming/ --user
+	pip3 install -U -e python/flake8/ --user
+	pip3 install -U -e python/mccabe/ --user
+	pip3 install -U -e python/pydocstyle/ --user
+	pip3 install -U -e python/pep8-naming/ --user
 
 vim:
 	cd vim && \
