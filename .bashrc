@@ -179,6 +179,10 @@ fi
 source ~/.local/bin/virtualenvwrapper.sh
 # }}}
 
+# {{{ Nix Paste
+alias nixpaste="curl -F 'text=<-' http://nixpaste.lbr.uno"
+# }}}
+
 # {{{ Cowsay
 # fortune -f
 cowperson=`cowsay -l | sed '1,1d' | sed 's/ /\n/g' | shuf -n 1`
