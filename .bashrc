@@ -161,11 +161,11 @@ source ~/.completion/tmux.sh
 # }}}
 
 # {{{ Docker
-source ~/.completion/docker.sh
-source ~/.dvm/dvm.sh
-[[ -r $DVM_DIR/bash_completion ]] && . $DVM_DIR/bash_completion
-dvm use 1.9.1 > /dev/null
-alias dockviz="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock nate/dockviz"
+# source ~/.completion/docker.sh
+# source ~/.dvm/dvm.sh
+# [[ -r $DVM_DIR/bash_completion ]] && . $DVM_DIR/bash_completion
+# dvm use 1.9.1 > /dev/null
+# alias dockviz="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock nate/dockviz"
 # }}}
 
 # {{{ Colors
@@ -176,7 +176,7 @@ fi
 # }}}
 
 # {{{ Python
-source ~/.local/bin/virtualenvwrapper.sh
+# source ~/.local/bin/virtualenvwrapper.sh
 # }}}
 
 # {{{ Nix Paste
@@ -227,14 +227,14 @@ alias cling="docker run -it cling"
 # }}}
 
 # {{{ JavaScript
-export NVM_DIR="/home/uralbash/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-nvm use 5 > /dev/null
+# export NVM_DIR="/home/uralbash/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# nvm use 5 > /dev/null
 # }}}
 
 # {{{ Go lang
-source ~/.gvm/scripts/gvm
-gvm use go1.5 > /dev/null
+# source ~/.gvm/scripts/gvm
+# gvm use go1.5 > /dev/null
 # }}}
 
 # {{{ Nix
@@ -250,5 +250,5 @@ alias weather="curl -4 http://wttr.in/Yekaterinburg"
 # }}}
 
 # {{{ Local setttings
-source ~/.bash-locals
+[ -s "~/.bash-locals" ] && . ~/.bash-locals
 # }}}

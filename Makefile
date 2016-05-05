@@ -28,9 +28,8 @@ vim-submodules:
 	cd .vim && make
 
 vim-build:
-	nix-env -i ninja mono perl lua-5.3.0 && \
-	cd submodules && \
-    make vim
+	nix-shell -p ninja mono perl lua python2 ruby ncurses \
+		--run "cd submodules && make vim"
 
 vim-spell:
 	@wget -r ftp://ftp.vim.org/pub/vim/runtime/spell/ -P .vim/

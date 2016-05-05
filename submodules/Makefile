@@ -25,7 +25,6 @@ vim:
 		--enable-multibyte \
 		--enable-rubyinterp \
 		--enable-pythoninterp \
-		--enable-python3interp \
 		--enable-perlinterp \
 		--enable-luainterp \
 		--enable-gui=auto \

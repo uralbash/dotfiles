@@ -1,4 +1,5 @@
-#! /usr/bin/env bash
+#! /usr/bin/env nix-shell
+#! nix-shell -i bash -p ruby
 #
 # generate.sh
 # Copyright (C) 2016 uralbash <root@uralbash.ru>
