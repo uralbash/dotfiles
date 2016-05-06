@@ -4,7 +4,7 @@
 #
 
 # export LUA_PREFIX=/nix/store/644xj34l4qn36hy921r3lhgcar27nysz-lua-5.3.0
-export LUA_PREFIX=/nix/store/anv44l0fiv4157x7p9yv50w9nm3ll54q-lua-5.3.0
+export LUA_PREFIX=/home/uralbash/.nix-profile
 
 all:
 	@echo "Makefile needs your attention"
