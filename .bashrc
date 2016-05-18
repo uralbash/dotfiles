@@ -230,6 +230,7 @@ alias cling="docker run -it cling"
 # export NVM_DIR="/home/uralbash/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 # nvm use 5 > /dev/null
+export PATH=~/.npm-global/bin:$PATH
 # }}}
 
 # {{{ Go lang
