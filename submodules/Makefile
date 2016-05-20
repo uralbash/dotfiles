@@ -27,13 +27,11 @@ vim:
 		--enable-pythoninterp \
 		--enable-perlinterp \
 		--enable-luainterp \
-		--enable-gui=auto \
-		--with-features=huge \
 		--enable-fail-if-missing \
 		--enable-largefile \
 		--with-x \
 		--enable-gui=auto \
-		--enable-xterm_clipboard \
+		--with-features=huge \
 		--enable-cscope \
 		LDFLAGS="-Wl,-rpath,${LUA_PREFIX}/lib" && \
     make -j5 && \
