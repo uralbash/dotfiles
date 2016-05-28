@@ -1,4 +1,8 @@
  {
+   allowUnfree = true;
+   firefox = {
+     enableAdobeFlash = true;
+   };
    packageOverrides = pkgs: rec {
      # vim = pkgs.vim.override {
      #   python = true;
