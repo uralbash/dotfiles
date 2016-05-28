@@ -69,7 +69,7 @@ call Load('../language/git.vim')
 
 " {{{ Autocomplete
 Plug 'ervandew/supertab'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
+Plug 'Valloric/YouCompleteMe' ", { 'do': './install.py --all' }
 call Load("youcompleteme.vim")
 " }}}
 

@@ -228,6 +228,7 @@ alias cling="docker run -it cling"
 
 # {{{ JavaScript
 export PATH=$PATH:$HOME/.npm-packages/bin/
+export PATH=$PATH:$HOME/.npm-global/bin/
 # }}}
 
 # {{{ Go lang
