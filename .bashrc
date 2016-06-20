@@ -214,23 +214,21 @@ source ~/.bash-powerline.sh
 
 # {{{ Vim
 export EDITOR=vim
-export PATH=$PATH:/home/uralbash/Projects/bin/vim/usr/local/bin/
-export VIMRUNTIME=/home/uralbash/Projects/bin/vim/usr/local/share/vim/vim74/
+export PATH=$PATH:$HOME/Projects/bin/vim/usr/local/bin/
+export VIMRUNTIME=$HOME/Projects/bin/vim/usr/local/share/vim/vim74/
 #alias vi=nvim
 #alias vim=nvim
 # }}}
 
 # {{{ Qt & C++
 # export PATH=/home/uralbash/Projects/package/mxe/usr/bin:$PATH
-export PATH=~/Projects/bin/Qt/Tools/QtCreator/bin/:$PATH
+export PATH=$HOME/Projects/bin/Qt/Tools/QtCreator/bin/:$PATH
 alias cling="docker run -it cling"
 # }}}
 
 # {{{ JavaScript
-# export NVM_DIR="/home/uralbash/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-# nvm use 5 > /dev/null
-export PATH=~/.npm-global/bin:$PATH
+export PATH=$PATH:$HOME/.npm-packages/bin/
+export PATH=$PATH:$HOME/.npm-global/bin/
 # }}}
 
 # {{{ Dart
