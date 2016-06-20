@@ -233,6 +233,10 @@ alias cling="docker run -it cling"
 export PATH=~/.npm-global/bin:$PATH
 # }}}
 
+# {{{ Dart
+export PATH=$PATH:/usr/lib/dart/bin
+# }}}
+
 # {{{ Go lang
 # source ~/.gvm/scripts/gvm
 # gvm use go1.5 > /dev/null
