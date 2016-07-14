@@ -38,3 +38,7 @@ NIXPKGS_CONFIG=$HOME/.nixpkgs/config.nix
 
 # Fortune
 # ~/.bash-org-ru/generate.sh > /dev/null
+
+# Disable Insert and Caps Lock
+xmodmap -e "keycode 118 ="
+setxkbmap -option caps:none
