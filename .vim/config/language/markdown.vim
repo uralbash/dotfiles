@@ -1,7 +1,7 @@
 " Add support for markdown files in tagbar.
 let g:tagbar_type_markdown = {
     \ 'ctagstype': 'markdown',
-    \ 'ctagsbin' : '/home/uralbash/.vim/submodules/markdown2ctags/markdown2ctags.py',
+    \ 'ctagsbin' : '~/.vim/submodules/markdown2ctags/markdown2ctags.py',
     \ 'ctagsargs' : '-f - --sort=yes',
     \ 'kinds' : [
         \ 's:sections',

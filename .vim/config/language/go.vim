@@ -1,5 +1,4 @@
-au BufNewFile,BufRead *.go set ft=go nu
-au FileType go setlocal foldmethod=syntax foldlevel=0
+au FileType go setlocal foldmethod=syntax foldlevel=0 nu
 
 " autocomplete, gofmt, syntax etc
 let g:go_fmt_command = "goimports"

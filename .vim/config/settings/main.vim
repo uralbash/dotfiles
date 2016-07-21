@@ -46,7 +46,7 @@ set wildignore+=*.o,*.pyc,*.jpg,*.png,*.gif,*.db,*.obj,.git " Ignore compiled fi
 set conceallevel=2 " Conceal level
 set ttyfast " Optimize for fast terminal connections
 set foldenable
-set foldmethod=indent
+" set foldmethod=indent
 set foldlevel=99
 setlocal colorcolumn=80
 set path=.,,**
@@ -92,5 +92,5 @@ if has('multi_byte') " {{{
 endif
 " }}}
 
-call Load("../settings/russian.vim")
-call Load("../settings/color.vim")
+call Load("./settings/russian.vim")
+call Load("./settings/color.vim")
