@@ -10,11 +10,11 @@ all:
 	@echo "Makefile needs your attention"
 
 python:
-	pip3 install -U -e python/pep8-naming/ --user
-	pip3 install -U -e python/flake8/ --user
-	pip3 install -U -e python/mccabe/ --user
-	pip3 install -U -e python/pydocstyle/ --user
-	pip3 install -U -e python/pep8-naming/ --user
+	pip3 install -U --user -e python/flake8/
+	pip3 install -U --user -e python/mccabe/
+	pip3 install -U --user -e python/pep8-naming/
+	pip3 install -U --user -e python/pycodestyle/
+	pip3 install -U --user -e python/pydocstyle/
 
 vim:
 	cd vim && \
