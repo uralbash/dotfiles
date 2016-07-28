@@ -40,8 +40,8 @@ call Load('./plugins/nerdtree.vim')
 
 
 " {{{ Git
-Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 call Load('./language/git.vim')
 " }}}
@@ -49,7 +49,7 @@ call Load('./language/git.vim')
 
 " {{{ Autocomplete
 Plug 'ervandew/supertab'
-Plug 'Valloric/YouCompleteMe' ", { 'do': './install.py --all' }
+Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
 call Load("./plugins/youcompleteme.vim")
 " }}}
 

@@ -11,6 +11,7 @@
 " nnoremap <leader>pc :YcmCompleter GoToDeclaration<CR>
 " C++
 nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" let g:ycm_goto_buffer_command = 'new-tab'
 
 let g:ycm_server_log_level = 'debug'
 " make YCM compatible with UltiSnips (using supertab)
