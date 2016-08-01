@@ -119,7 +119,7 @@ Plug 'mindriot101/vim-yapf',        {'for': 'python'}
 Plug 'jmcantrell/vim-virtualenv',   {'for': 'python'}
 Plug 'jmcantrell/vim-virtualenv',   {'for': 'python'}
 Plug 'hynek/vim-python-pep8-indent', {'for': 'python'}
-autocmd Filetype python call Load('./language/python.vim')
+call Load('./language/python.vim')
 " Template engine
 Plug 'Glench/Vim-Jinja2-Syntax', {'for': ['html', 'htmldjango']}
 Plug 'sophacles/vim-bundle-mako', {'for': ['html', 'mako']}
