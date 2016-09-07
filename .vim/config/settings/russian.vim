@@ -3,9 +3,11 @@ function! EnRuHighlight()
     if &iminsert == 0
         execute "AirlineTheme light"
         set iminsert=1
+        let g:autopairs_enabled = 0
     else
         execute "AirlineTheme lucius"
         set iminsert=0
+         let g:autopairs_enabled = 0
     endif
 endfunction
 

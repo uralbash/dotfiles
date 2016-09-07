@@ -1,0 +1,7 @@
+// Place your settings in this file to overwrite the default settings
+{
+    // Controls the font size.
+    "editor.fontSize": 16,
+    // Insert snippets when their prefix matches. Works best when 'quickSuggestions' aren't enabled.
+    "editor.tabCompletion": true
+}
