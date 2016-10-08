@@ -6,17 +6,16 @@ function! Load(filename)
 endfunction
 " }}}
 
-au BufNewFile,BufRead *.go set ft=go
-au BufNewFile,BufRead *.nix filetype=nix
-au BufNewFile,BufRead *.css_t set filetype=css
-au BufNewFile,BufRead .eslintrc set ft=json
-au BufNewFile,BufRead *.js_t set filetype=javascript
-au BufNewFile,BufRead *.qbs,*.qbp set filetype=javascript
-au BufNewFile,BufRead *.jinja2 set filetype=jinja2
-au BufNewFile,BufRead Dockerfile set filetype=dockerfile
-
-au FileType html set filetype=htmldjango
-au FileType jinja2 set filetype=htmldjango
+au BufNewFile,BufRead *.go          set ft=go
+au BufNewFile,BufRead *.nix         set ft=nix
+au BufNewFile,BufRead *.css_t       set filetype=css
+au BufNewFile,BufRead .eslintrc     set ft=json
+au BufNewFile,BufRead *.js_t        set filetype=javascript
+au BufNewFile,BufRead *.qbs,*.qbp   set filetype=javascript
+au BufNewFile,BufRead *.jinja2      set filetype=jinja2
+au BufNewFile,BufRead Dockerfile    set filetype=dockerfile
+au FileType html                    set filetype=htmldjango
+au FileType jinja2                  set filetype=htmldjango
 au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm,*.jinja,*.jinja2 set ft=htmldjango
 
 
@@ -76,7 +75,7 @@ call Load("./plugins/auto-pairs.vim")
 
 
 " {{{ RestructuredText & Markdown
-Plug 'Rykka/riv.vim', { 'for': 'rst' }
+" Plug 'Rykka/riv.vim', { 'for': 'rst' } Not support vim 8
 autocmd Filetype rst call Load('./language/sphinx.vim')
 autocmd Filetype md  call Load('./language/markdown.vim')
 " }}}
@@ -87,7 +86,7 @@ let _type = ['jinja', 'jinja2', 'html', 'html5', 'djangohtml']
 Plug 'othree/html5.vim',        {'for': _type}
 Plug 'ap/vim-css-color',        {'for': _type}
 Plug 'hail2u/vim-css3-syntax',  {'for': _type}
-autocmd Filetype html,jinja,css,djangohtml call Load('./language/css.vim')
+autocmd Filetype html,jinja,css,djangohtml,htmldjango call Load('./language/css.vim')
 " }}}
 
 

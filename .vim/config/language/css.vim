@@ -6,3 +6,6 @@ let g:tagbar_type_css = {
         \ 'i:identities'
     \ ]
 \ }
+
+
+au FileType htmldjango setlocal expandtab shiftwidth=2 tabstop=2
