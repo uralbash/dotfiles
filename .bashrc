@@ -214,8 +214,7 @@ source ~/.bash-powerline.sh
 
 # {{{ Vim
 export EDITOR=vim
-export PATH=$PATH:$HOME/Projects/bin/vim/usr/local/bin/
-export VIMRUNTIME=$HOME/Projects/bin/vim/usr/local/share/vim/vim74/
+export VIMRUNTIME=$HOME/Projects/bin/vim/usr/local/share/vim/vim80/
 #alias vi=nvim
 #alias vim=nvim
 # }}}
@@ -253,5 +252,7 @@ alias weather="curl -4 http://wttr.in/Yekaterinburg"
 # }}}
 
 # {{{ Local setttings
-[ -s "~/.bash-locals" ] && . ~/.bash-locals
+if [ -f ~/.bash-locals ]; then
+    . ~/.bash-locals
+fi
 # }}}
