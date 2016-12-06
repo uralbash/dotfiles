@@ -11,15 +11,14 @@
 " nnoremap <leader>pc :YcmCompleter GoToDeclaration<CR>
 " C++
 nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-" let g:ycm_goto_buffer_command = 'new-tab'
-
+let g:ycm_goto_buffer_command = 'new-tab'
 let g:ycm_server_log_level = 'debug'
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion=1
-" let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_global_ycm_extra_conf = '~/.vim/config/.ycm_extra_conf.py'
+let g:ycm_python_binary_path = 'python3'
 
 let g:ycm_register_as_syntastic_checker = 1
 let g:ycm_key_list_select_completion = ['<Tab>', '<Down>']
