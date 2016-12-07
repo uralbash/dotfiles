@@ -28,7 +28,7 @@ vim-submodules:
 	cd .vim && make
 
 vim-build:
-	nix-shell -p ninja mono perl lua python2 ruby ncurses \
+	nix-shell -p ninja perl lua python2 ruby ncurses5 \
 		--run "cd submodules && make vim"
 
 vim-spell:

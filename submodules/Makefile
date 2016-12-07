@@ -18,22 +18,23 @@ python:
 	pip3 install -U --user isort ipython
 
 vim:
-	cd vim && \
-	git reset --hard && \
-    git pull origin master && \
-    make clean distclean && \
+	cd vim && 						 \
+	git reset --hard && 			 \
+    git pull origin master && 		 \
+    make clean distclean && 		 \
 	./configure --with-features=huge \
-		--enable-multibyte \
-		--enable-rubyinterp \
-		--enable-pythoninterp \
-		--enable-perlinterp \
-		--enable-luainterp \
-		--enable-fail-if-missing \
-		--enable-largefile \
-		--with-x \
-		--enable-gui=auto \
-		--with-features=huge \
-		--enable-cscope \
+		--enable-multibyte 			 \
+		--enable-rubyinterp 		 \
+		--enable-pythoninterp 		 \
+		--enable-perlinterp 		 \
+		--enable-luainterp 			 \
+		--enable-fail-if-missing 	 \
+		--enable-largefile 			 \
+		--with-x 					 \
+		--with-tlib=ncurses 		 \
+		--enable-gui=auto 			 \
+		--with-features=huge 		 \
+		--enable-cscope 			 \
 		LDFLAGS="-Wl,-rpath,${LUA_PREFIX}/lib" && \
     make -j5 && \
 	mkdir -p ~/Projects/bin/vim/ && \
