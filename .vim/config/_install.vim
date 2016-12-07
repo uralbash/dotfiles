@@ -48,7 +48,7 @@ call Load('./language/git.vim')
 
 " {{{ Autocomplete
 Plug 'ervandew/supertab'
-Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe' , { 'do': 'nix-shell -p python cmake --command ./install.py' }
 call Load("./plugins/youcompleteme.vim")
 " }}}
 
@@ -91,11 +91,11 @@ autocmd Filetype html,jinja,css,djangohtml,htmldjango call Load('./language/css.
 
 
 " {{{ JavaScrip & JSON & YAML
-Plug 'elzr/vim-json',               {'for': 'json'}
-Plug 'mxw/vim-jsx',                 {'for': 'javascript'}
-Plug 'othree/yajs.vim',             {'for': 'javascript'}
-Plug 'pangloss/vim-javascript',     {'for': 'javascript'}
-Plug 'othree/es.next.syntax.vim',   {'for': 'javascript'}
+Plug 'elzr/vim-json',                {'for':       'json'}
+Plug 'mxw/vim-jsx',                  {'for': 'javascript'}
+Plug 'othree/yajs.vim',              {'for': 'javascript'}
+Plug 'pangloss/vim-javascript',      {'for': 'javascript'}
+Plug 'othree/es.next.syntax.vim',    {'for': 'javascript'}
 Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
 Plug 'othree/javascript-libraries-syntax.vim', {'for': 'javascript'}
 Plug 'marijnh/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
@@ -111,12 +111,12 @@ Plug 'LnL7/vim-nix', {'for': 'nix'}
 
 
 " {{{ Python
-Plug 'fisadev/vim-isort',           {'for': 'python'}
-Plug 'hdima/python-syntax',         {'for': 'python'}
-Plug 'python-rope/ropevim',         {'for': 'python'}
-Plug 'mindriot101/vim-yapf',        {'for': 'python'}
-Plug 'jmcantrell/vim-virtualenv',   {'for': 'python'}
-Plug 'jmcantrell/vim-virtualenv',   {'for': 'python'}
+Plug 'fisadev/vim-isort',            {'for': 'python'}
+Plug 'hdima/python-syntax',          {'for': 'python'}
+Plug 'python-rope/ropevim',          {'for': 'python'}
+Plug 'mindriot101/vim-yapf',         {'for': 'python'}
+Plug 'jmcantrell/vim-virtualenv',    {'for': 'python'}
+Plug 'jmcantrell/vim-virtualenv',    {'for': 'python'}
 Plug 'hynek/vim-python-pep8-indent', {'for': 'python'}
 call Load('./language/python.vim')
 " Template engine

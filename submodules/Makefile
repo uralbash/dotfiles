@@ -15,7 +15,7 @@ python:
 	pip3 install -U --user -e python/pep8-naming/
 	pip3 install -U --user -e python/pycodestyle/
 	pip3 install -U --user -e python/pydocstyle/
-	pip3 install -U --user isort ipython
+	pip3 install -U --user ipdb isort ipython
 
 vim:
 	cd vim && 						 \
