@@ -8,7 +8,7 @@
 " {{{ Python
 " Syntax check mode for python (pip install pylama)
 let g:syntastic_python_checkers = ['flake8', 'mccabe', 'pep8', 'python3', 'pydocstyle']
-let g:syntastic_python_pydocstyle_args = '--ignore=D100,D101'
+let g:syntastic_python_pydocstyle_args = '--ignore=D100,D101,D103'
 " }}}
 
 " {{{ JavaScript
