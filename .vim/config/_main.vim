@@ -67,10 +67,6 @@ Plug 'othree/javascript-libraries-syntax.vim', {'for': _JsType}
 Plug 'marijnh/tern_for_vim', {'for': _JsType, 'do': 'npm install'}
 " }}}
 
-" au BufNewFile,BufRead,BufEnter *.js
-"             \ setlocal filetype=javascript
-" debug call Load('./language/js.vim')
-
 " {{{ Nix package manager
 Plug 'LnL7/vim-nix', {'for': 'nix'}
 " }}}
@@ -117,17 +113,4 @@ Plug 'tpope/vim-endwise', {'for': 'ruby'}
 let _type = ['c', 'cpp']
 Plug 'vim-scripts/a.vim',       {'for': _type}
 Plug 'rhysd/vim-clang-format',  {'for': _type}
-" }}}
-
-
-" {{{ Vim
-" }}}
-
-
-
-" {{{ TMP
-" TMP {{{ Quicktaks
-" Plug 'aaronbieber/vim-quicktask' " TODO
-" call Load('./plugins/quicktask.vim')
-" }}}
 " }}}

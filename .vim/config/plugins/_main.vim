@@ -25,10 +25,3 @@ autocmd Filetype js, javascript, javascript.jsx
 let _type = ['c', 'cpp']
 autocmd Filetype _type source ~/.vim/config/plugins/clang-format.vim
 " }}}
-
-" {{{ TMP
-" TMP {{{ Quicktaks
-" Plug 'aaronbieber/vim-quicktask' " TODO
-" call Load('./plugins/quicktask.vim')
-" }}}
-" }}}
