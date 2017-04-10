@@ -10,12 +10,12 @@ all:
 	@echo "Makefile needs your attention"
 
 python:
-	pip3 install -U --user -e python/flake8/
-	pip3 install -U --user -e python/mccabe/
-	pip3 install -U --user -e python/pep8-naming/
-	pip3 install -U --user -e python/pycodestyle/
-	pip3 install -U --user -e python/pydocstyle/
-	pip3 install -U --user ipdb isort ipython
+	cd python/flake8/      && python setup.py install  --user 
+	cd ../../python/mccabe/      && python setup.py install  --user 
+	cd ../../python/pep8-naming/ && python setup.py install  --user 
+	cd ../../python/pycodestyle/ && python setup.py install  --user 
+	cd ../../python/pydocstyle/  && python setup.py install  --user
+	pip install --user ipdb isort ipython
 
 vim:
 	cd vim && 						 \
@@ -35,7 +35,7 @@ vim:
 		--enable-gui=auto 			 \
 		--with-features=huge 		 \
 		--enable-cscope 			 \
-		LDFLAGS="-Wl,-rpath,${LUA_PREFIX}/lib" && \
+		LDFLAGS="-Wl,-rpath,${LUA_PREFIX}/lib,-L/nix/store/zjla10glbmd7ih6ir1k38br0imv282q3-ncurses-5.9/lib" && \
     make -j5 && \
 	mkdir -p ~/Projects/bin/vim/ && \
 	make install DESTDIR=~/Projects/bin/vim/ && \

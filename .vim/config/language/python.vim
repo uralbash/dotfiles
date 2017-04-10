@@ -1,5 +1,5 @@
 autocmd Filetype python call SetPythonConfig()
-au FileType python setlocal foldmethod=syntax foldlevel=0
+autocmd BufNewFile,BufRead *.py call SetPythonConfig()
 
 " enable all Python syntax highlighting features
 let python_highlight_all = 1
@@ -11,11 +11,12 @@ function! SetPythonConfig()
     " Python indentation
     " About nosmartindent please look this link
     " http://stackoverflow.com/questions/2063175/vim-insert-mode-comments-go-to-start-of-line
+    setlocal foldmethod=syntax foldlevel=0
     setlocal expandtab shiftwidth=4 tabstop=8 nosmartindent nofoldenable
     setlocal colorcolumn=80
     highlight OverLength ctermbg=red
 
-    map <silent> <leader>b Oimport ipdb; ipdb.set_trace()<esc>
+    map <silent> <leader>pdb Oimport ipdb; ipdb.set_trace()<esc>
     map <C-i> :Isort<CR>
 
     " Python: jedi-vim disable auto preview docs

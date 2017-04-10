@@ -1,4 +1,6 @@
 " {{{ Main
+syntax on
+filetype on
 " Disable timeout for Esc key
 set ttimeout ttimeoutlen=0 notimeout timeoutlen=1000
 " Autocomplete options:
@@ -49,6 +51,7 @@ set foldenable
 " set foldmethod=indent
 set foldlevel=99
 setlocal colorcolumn=80
+highlight OverLength ctermbg=red
 set path=.,,**
 " Store swap, backup and undo files in fixed location
 set dir=/var/tmp//,/tmp//,.
@@ -91,6 +94,3 @@ if has('multi_byte') " {{{
     endif
 endif
 " }}}
-
-call Load("./settings/russian.vim")
-call Load("./settings/color.vim")

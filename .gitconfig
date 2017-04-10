@@ -1,26 +1,26 @@
 [user]
-	email = root@uralbash.ru
-	name = Svintsov Dmitry
+    email = root@uralbash.ru
+    name = Svintsov Dmitry
 [giggle]
-	main-window-maximized = true
-	main-window-geometry = 631x168+316+180
-	main-window-view = HistoryView
-	history-view-vpane-position = 305
-	file-view-vpane-position = 663
+    main-window-maximized = true
+    main-window-geometry = 631x168+316+180
+    main-window-view = HistoryView
+    history-view-vpane-position = 305
+    file-view-vpane-position = 663
 [alias]
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative	
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     flow = flow
-	d = difftool
+    d = difftool
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 [difftool]
-	prompt = false
+    prompt = false
 [mergetool "vimdiff"]
-	keepBackup = false
+    keepBackup = false
 [core]
-	excludesfile = /home/uralbash/.gitignore
+    excludesfile = /home/uralbash/.gitignore
 [push]
-	default = simple
+    default = simple
 [credential]
-	helper = cache
+    helper = cache

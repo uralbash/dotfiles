@@ -3,7 +3,7 @@
 " let g:nerdtree_tabs_focus_on_files = 1
 " let g:NERDTreeDirArrows=0
 " let g:NERDTreeUpdateOnWrite = 0
-let NERDTreeIgnore = ['\.pyc$', '\.egg-info$', 'dist', '__pycache__']
+let NERDTreeIgnore = ['\.pyc$', '\.egg-info$', '__pycache__']
 " Автоматическое закрытие с последним окном
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
