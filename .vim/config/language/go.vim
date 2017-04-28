@@ -1,4 +1,4 @@
-au FileType go setlocal foldmethod=syntax foldlevel=0 nu
+setlocal foldmethod=syntax foldlevel=0 nu
 
 " autocomplete, gofmt, syntax etc
 let g:go_fmt_command = "goimports"

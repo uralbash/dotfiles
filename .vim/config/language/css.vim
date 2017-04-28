@@ -8,4 +8,4 @@ let g:tagbar_type_css = {
 \ }
 
 
-au FileType htmldjango setlocal expandtab shiftwidth=2 tabstop=2
+setlocal expandtab shiftwidth=2 tabstop=2

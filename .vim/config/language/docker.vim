@@ -1,1 +1,1 @@
-au FileType dockerfile setlocal foldmethod=marker foldlevel=0
+setlocal foldmethod=marker foldlevel=0

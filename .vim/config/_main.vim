@@ -29,7 +29,7 @@ Plug 'Valloric/YouCompleteMe' , {
 
 " {{{ IDE
 Plug 'majutsushi/tagbar'        " <F8> TagBar
-Plug 'thinca/vim-quickrun'      " <F5> Run
+" Plug 'thinca/vim-quickrun'      " <F5> Run
 Plug 'Yggdroot/indentLine'      " <M-l> Display indentation lines
 Plug 'tomtom/tcomment_vim'      " <M-M> Comment selected lines
 Plug 'scrooloose/syntastic'     " <M-e> Syntax checker

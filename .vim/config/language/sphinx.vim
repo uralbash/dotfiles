@@ -1,4 +1,4 @@
-au FileType rst setl sw=4 sts=4 et
+setl sw=4 sts=4 et
 
 let g:riv_auto_format_table=0
 

@@ -8,6 +8,9 @@ autocmd Filetype md  source ~/.vim/config/language/markdown.vim
 " {{{ HTML & CSS
 autocmd Filetype html,jinja,jinja2,css,djangohtml,htmldjango,html5
             \ source ~/.vim/config/language/css.vim
+" Template engine
+autocmd Filetype html,jinja,jinja2,css,djangohtml,htmldjango,html5
+            \ source ~/.vim/config/language/jinja.vim
 " }}}
 
 
@@ -19,32 +22,35 @@ source ~/.vim/config/language/js.vim
 
 " {{{ Python
 autocmd Filetype python source ~/.vim/config/language/python.vim
-" Template engine
-autocmd Filetype python source ~/.vim/config/language/jinja.vim
 " }}}
 
 
 " {{{ Golang
-autocmd Filetype go call source ~/.vim/config/language/go.vim
+autocmd Filetype go source ~/.vim/config/language/go.vim
 " }}}
 
 
 " {{{ Dart
-autocmd Filetype dart call source ~/.vim/config/language/dart.vim
+autocmd Filetype dart source ~/.vim/config/language/dart.vim
 " }}}
 
 
 " {{{ Nginx, Docker, Vagrant etc...
-autocmd Filetype nginx call source ~/.vim/config/language/nginx.vim
-autocmd Filetype dockerfile call source ~/.vim/config/language/docker.vim
+autocmd Filetype nginx source ~/.vim/config/language/nginx.vim
+autocmd Filetype dockerfile source ~/.vim/config/language/docker.vim
 " }}}
 
 
 " {{{ Ruby
-autocmd Filetype ruby call source ~/.vim/config/language/ruby.vim
+autocmd Filetype ruby source ~/.vim/config/language/ruby.vim
 " }}}
 
 
 " {{{ Vim
-autocmd Filetype vim call source ~/.vim/config/language/vim.vim
+autocmd Filetype vim source ~/.vim/config/language/vim.vim
+" }}}
+
+
+" {{{ Git
+autocmd Filetype gitcommit source ~/.vim/config/language/git.vim
 " }}}
