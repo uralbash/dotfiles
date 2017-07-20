@@ -14,6 +14,7 @@ source ~/.vim/config/plugins/indentline.vim
 source ~/.vim/config/plugins/syntastic.vim
 source ~/.vim/config/plugins/quickrun.vim
 source ~/.vim/config/plugins/auto-pairs.vim
+source ~/.vim/config/plugins/tagbar.vim
 " }}}
 
 " {{{ JavaScrip & JSON & YAML

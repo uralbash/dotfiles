@@ -41,9 +41,9 @@ let g:syntastic_go_checkers = ['go', 'golint']
 let g:syntastic_cpp_checkers = ['gcc']
 let g:ycm_show_diagnostics_ui = 0
 let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_compiler = 'gcc'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 " let g:syntastic_cpp_include_dirs = ["/usr/include/qt/QtWidgets/"]
-" let g:syntastic_cpp_compiler = 'gcc'
-" let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 " }}}
 
 " {{{ Settings

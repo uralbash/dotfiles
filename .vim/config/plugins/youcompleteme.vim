@@ -30,6 +30,7 @@ let g:ycm_register_as_syntastic_checker = 1
 let g:ycm_key_list_select_completion    = ['<Tab>', '<Down>']
 let g:ycm_key_list_previous_completion  = ['<S-Tab>', '<Up>']
 let g:SuperTabDefaultCompletionType     = '<Tab>'
+let g:SuperTabContextDefaultCompletionType = '<Tab>'
 " let g:ycm_autoclose_preview_window_after_completion = 1
 
 let g:ycm_collect_identifiers_from_tags_files = 1
