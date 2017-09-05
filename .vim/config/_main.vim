@@ -22,9 +22,10 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " {{{ Autocomplete
 Plug 'ervandew/supertab'
-Plug 'Valloric/YouCompleteMe' , {
-            \ 'do': 'nix-shell -p python cmake --command ./install.py' }
-" }}}
+Plug 'Shougo/neocomplete.vim',
+" Plug 'Valloric/YouCompleteMe' , {
+"             \ 'do': 'nix-shell -p python cmake --command ./install.py' }
+" " }}}
 
 
 " {{{ IDE
@@ -36,6 +37,11 @@ Plug 'scrooloose/syntastic'     " <M-e> Syntax checker
 Plug 'aperezdc/vim-template'    " :Template *.py
 Plug 'vim-scripts/Auto-Pairs'   " Auto-Pairs or DelimMate
 Plug 'vim-scripts/DeleteTrailingWhitespace' " :DeleteTrailingSpace
+
+Plug 'ctrlpvim/ctrlp.vim',
+Plug 'tomtom/tlib_vim',
+Plug 'MarcWeber/vim-addon-mw-utils',
+Plug 'Shougo/vimproc.vim', {'do': 'make'}
 " }}}
 
 
@@ -73,11 +79,11 @@ Plug 'LnL7/vim-nix', {'for': 'nix'}
 
 
 " {{{ Python
+Plug 'davidhalter/jedi-vim'
 Plug 'fisadev/vim-isort',            {'for': 'python'}
 Plug 'hdima/python-syntax',          {'for': 'python'}
 Plug 'python-rope/ropevim',          {'for': 'python'}
 Plug 'mindriot101/vim-yapf',         {'for': 'python'}
-Plug 'jmcantrell/vim-virtualenv',    {'for': 'python'}
 Plug 'jmcantrell/vim-virtualenv',    {'for': 'python'}
 Plug 'hynek/vim-python-pep8-indent', {'for': 'python'}
 " Template engine
@@ -85,6 +91,15 @@ Plug 'Glench/Vim-Jinja2-Syntax', {'for': _HtmlType}
 Plug 'sophacles/vim-bundle-mako', {'for': ['html', 'mako']}
 " }}}
 
+
+" {{{ Haskell
+" http://www.stephendiehl.com/posts/vim_2016.html
+Plug 'eagletmt/ghcmod-vim',           {
+      \ 'do': 'nix-shell -p stack --command \"stack install hlint ghc-mod\"'}
+Plug 'eagletmt/neco-ghc',             {
+      \ 'do': 'nix-shell -p stack --command \"stack install hlint ghc-mod\"'}
+Plug 'neovimhaskell/haskell-vim',
+" }}}
 
 " {{{ Golang
 Plug 'fatih/vim-go', { 'for': 'go' }

@@ -21,7 +21,7 @@ source ~/.vim/config/language/js.vim
 " }}}
 
 " {{{ Python
-autocmd Filetype python source ~/.vim/config/language/python.vim
+source ~/.vim/config/language/python.vim
 " }}}
 
 
@@ -34,6 +34,9 @@ autocmd Filetype go source ~/.vim/config/language/go.vim
 autocmd Filetype dart source ~/.vim/config/language/dart.vim
 " }}}
 
+" {{{ Haskell
+source ~/.vim/config/language/haskell.vim
+" }}}
 
 " {{{ Nginx, Docker, Vagrant etc...
 autocmd Filetype nginx source ~/.vim/config/language/nginx.vim

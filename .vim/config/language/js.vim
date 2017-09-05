@@ -1,7 +1,7 @@
 set foldmethod=syntax
 
 " Auto complete options for JavaScript
-set omnifunc=tern#Complete
+autocmd FileType javascript setlocal omnifunc=tern#Complete
 
 " JavaScript indentation
 set expandtab shiftwidth=2 tabstop=2
