@@ -221,7 +221,7 @@ export VIMRUNTIME=$HOME/Projects/bin/vim/usr/local/share/vim/vim80/
 
 # {{{ Qt & C++
 # export PATH=/home/uralbash/Projects/package/mxe/usr/bin:$PATH
-export PATH=$HOME/Projects/bin/Qt/Tools/QtCreator/bin/:$PATH
+export PATH=$HOME/Projects/bin/Qt-online/Tools/QtCreator/bin/:$PATH
 alias cling="docker run -it cling"
 # }}}
 
