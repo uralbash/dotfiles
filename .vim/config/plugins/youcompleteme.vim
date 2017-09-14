@@ -48,6 +48,8 @@ else " no gui
 endif
 
 
+let g:jedi#use_tabs_not_buffers = 1
+
 map <silent> <Leader>t :CtrlPMRUFiles()<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPLastMode'
