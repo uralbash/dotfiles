@@ -1,2 +1,2 @@
 set autocomplete=false
-set gui=nonavigation
+set gui=nonavigation,notabs

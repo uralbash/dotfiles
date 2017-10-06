@@ -113,7 +113,7 @@ Plug 'dart-lang/dart-vim-plugin', {'for': 'dart'}
 
 " {{{ Nginx, Docker, Vagrant etc...
 Plug 'keith/tmux.vim',              {'for': 'tmux'}
-Plug 'evanmiller/nginx-vim-syntax', {'for': 'nginx'}
+Plug 'chr4/nginx.vim',              {'for': 'nginx'}
 Plug 'ekalinin/Dockerfile.vim',     {'for': 'dockerfile'}
 " }}}
 
