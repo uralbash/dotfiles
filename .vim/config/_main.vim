@@ -22,7 +22,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " {{{ Autocomplete
 Plug 'ervandew/supertab'
-Plug 'Shougo/neocomplete.vim',
+Plug 'maralla/completor.vim',
+" Plug 'Shougo/neocomplete.vim',
 " Plug 'Valloric/YouCompleteMe' , {
 "             \ 'do': 'nix-shell -p python cmake --command ./install.py' }
 " " }}}

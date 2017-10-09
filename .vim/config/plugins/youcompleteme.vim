@@ -37,6 +37,7 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 set tags+=./.tags
 " }}
 
+" {{ SuperTab
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 
 if has("gui_running")
@@ -46,10 +47,17 @@ else " no gui
     inoremap <Nul> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
   endif
 endif
+" }}
 
-
+" {{ Jedi
 let g:jedi#use_tabs_not_buffers = 1
+" }}
 
+" {{
+" let g:completor_python_binary = '/path/to/python/with/jedi/installed'
+" }}
+
+" {{ CtrlP
 map <silent> <Leader>t :CtrlPMRUFiles()<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPLastMode'
@@ -59,3 +67,4 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<C-e>'],
     \ 'AcceptSelection("t")': ['<Cr>'],
     \ }
+" }}
