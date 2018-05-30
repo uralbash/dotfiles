@@ -22,7 +22,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " {{{ Autocomplete
 Plug 'ervandew/supertab'
-Plug 'maralla/completor.vim',
+" Plug 'maralla/completor.vim',
 " Plug 'Shougo/neocomplete.vim',
 " Plug 'Valloric/YouCompleteMe' , {
 "             \ 'do': 'nix-shell -p python cmake --command ./install.py' }
@@ -31,10 +31,12 @@ Plug 'maralla/completor.vim',
 
 " {{{ IDE
 Plug 'majutsushi/tagbar'        " <F8> TagBar
+Plug 'aaronbieber/vim-quicktask'
 " Plug 'thinca/vim-quickrun'      " <F5> Run
 Plug 'Yggdroot/indentLine'      " <M-l> Display indentation lines
 Plug 'tomtom/tcomment_vim'      " <M-M> Comment selected lines
-Plug 'scrooloose/syntastic'     " <M-e> Syntax checker
+" Plug 'scrooloose/syntastic'     " <M-e> Syntax checker
+Plug 'w0rp/ale'
 Plug 'aperezdc/vim-template'    " :Template *.py
 Plug 'vim-scripts/Auto-Pairs'   " Auto-Pairs or DelimMate
 Plug 'vim-scripts/DeleteTrailingWhitespace' " :DeleteTrailingSpace
@@ -89,7 +91,7 @@ Plug 'jmcantrell/vim-virtualenv',    {'for': 'python'}
 Plug 'hynek/vim-python-pep8-indent', {'for': 'python'}
 " Template engine
 Plug 'Glench/Vim-Jinja2-Syntax', {'for': _HtmlType}
-Plug 'sophacles/vim-bundle-mako', {'for': ['html', 'mako']}
+Plug 'sophacles/vim-bundle-mako', {'for': ['html', 'mako', 'mako.html']}
 " }}}
 
 
@@ -113,9 +115,9 @@ Plug 'dart-lang/dart-vim-plugin', {'for': 'dart'}
 
 
 " {{{ Nginx, Docker, Vagrant etc...
-Plug 'keith/tmux.vim',              {'for': 'tmux'}
+Plug 'ericpruitt/tmux.vim'
 Plug 'chr4/nginx.vim',              {'for': 'nginx'}
-Plug 'ekalinin/Dockerfile.vim',     {'for': 'dockerfile'}
+Plug 'ekalinin/Dockerfile.vim'
 " }}}
 
 

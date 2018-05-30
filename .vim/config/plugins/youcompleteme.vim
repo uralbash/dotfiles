@@ -54,7 +54,7 @@ let g:jedi#use_tabs_not_buffers = 1
 " }}
 
 " {{
-" let g:completor_python_binary = '/path/to/python/with/jedi/installed'
+" let g:completor_python_binary = python_intr
 set omnifunc=syntaxcomplete#Complete
 " }}
 

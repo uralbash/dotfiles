@@ -12,7 +12,7 @@
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+      . "$HOME/.bashrc"
     fi
 fi
 
@@ -42,3 +42,6 @@ NIXPKGS_CONFIG=$HOME/.nixpkgs/config.nix
 # Disable Insert and Caps Lock
 xmodmap -e "keycode 118 ="
 setxkbmap -option caps:none
+
+# SSH
+eval $(ssh-agent)

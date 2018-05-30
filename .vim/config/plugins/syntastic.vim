@@ -1,5 +1,9 @@
 " Syntastic options {{{
 
+
+let g:ale_open_list = 1
+
+
 " {{{ Debug
 " let g:syntastic_debug=1
 " let g:syntastic_mode_map = { 'passive_filetypes': ['rst'] }

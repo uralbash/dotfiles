@@ -256,3 +256,4 @@ if [ -f ~/.bash-locals ]; then
     . ~/.bash-locals
 fi
 # }}}
+export EVENT_NOKQUEUE=1

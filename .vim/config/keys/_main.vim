@@ -6,7 +6,7 @@ imap <leader>w <ESC>:call EnRuHighlight()<CR>a
 " }}}
 
 " Spellchecking
-map <leader>g :call ToggleSpell(1)<CR>
+map <leader>s :call ToggleSpell(1)<CR>
 
 " Autopairs disable hotkey
 let g:AutoPairsShortcutToggle = '<M-z>'
